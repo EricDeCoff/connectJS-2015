@@ -1,1 +1,97 @@
 /* Empty. Add your own CSS if you like */
+#about-h1 {
+    display: block; 
+    text-decoration: none;
+	font: Helvetica, Arial, Sans-Serif; 
+    /* letter-spacing: -5px;  */
+	text-align: center;
+	color: #999; 
+    text-shadow: 0px 3px 8px #2a2a2a;    
+}
+#about-georgia {
+    display: block; 
+    text-decoration: none;
+	font: 2.25em Helvetica, Arial, Sans-Serif; 
+    /* letter-spacing: -5px;  */
+	text-align: center;
+	color: #999; 
+    text-shadow: 0px 3px 8px #2a2a2a;    
+    /*
+	color: #222; 
+    text-shadow: 0px 2px 3px #555;    
+    */
+}
+#about-years{
+}
+#about-table{
+    position: fixed;
+    top:0;
+    left:0;
+}
+
+.about-bgImage{
+    background-image: url('../img/lori_hudson_blank.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+.content-bgImage{
+    background-image: url('../img/staticmap.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+
+h1 {
+    font-size: 5vw;
+}
+
+.ui-header .ui-title {
+  overflow: visible !important;
+  white-space: normal !important;
+}
+/* code to keep ios and android format in sync ( android header default: 44px ) */
+.platform-android.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader) {
+  height: 64px; 
+}
+.platform-android.platform-cordova:not(.fullscreen) .has-header {
+  top: 64px; 
+}
+
+
+@media only screen and (orientation:portrait) {
+    #homePortrait{
+        display: inline-block;
+    }
+    #homeLandscape {
+        display: none;
+    }
+    .landscape{
+        display: none;
+    }
+    .portrait{
+        display: inline-block;
+    }
+}
+
+@media only screen and (orientation:landscape) {
+    #homePortrait{
+        display: none;
+    }
+    #homeLandscape {
+        display: inline-block;
+        
+    }
+    .landscape{
+        display:inline-block;
+    }
+    .portrait{
+        display:none;
+    }
+    .content-bgImage{
+        background-position: 0px 0px;
+    }
+
+}

@@ -1,22 +1,38 @@
 /* jshint strict: false, -W117 */
-angular.module('app', ['ionic','home.controller','about.controller','contact.controller'])
+angular.module('app', ['ionic','ui.router',
+                       'home.controller','about.controller','contact.controller',
+                       'ui.controllers',
+                       'custom.directives'
+                      ])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
+      
     if(window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
     }
+    
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
   });
+    /*
+    document.addEventListener("intel.xdk.device.ready",onDeviceReadyHideStatus,false);
+    function onDeviceReadyHideStatus(evt)
+    {
+        intel.xdk.device.hideStatusBar();
+    } 
+    */
 })
 
-.config(function ($stateProvider, $urlRouterProvider) {
+.config(function ($ionicConfigProvider, $stateProvider, $urlRouterProvider) {
     console.log('.config');
 
+    $ionicConfigProvider.tabs.position('bottom');
+    $ionicConfigProvider.tabs.style('standard');
+    
     $stateProvider
     .state('tabs', {
       url: "/tab",
@@ -50,8 +66,17 @@ angular.module('app', ['ionic','home.controller','about.controller','contact.con
           controller: 'contactCtrl'
         }
       }
+    })
+    .state('tabs.settings', {
+      url: "/settings",
+      views: {
+        'contact-tab': {
+          templateUrl: "templates/settings.html"
+        }
+      }
     });
-   $urlRouterProvider.otherwise("/tab/home");
+
+    $urlRouterProvider.otherwise("/tab/contact");
 /*    
     // State to represent Home View
     .state('home', {

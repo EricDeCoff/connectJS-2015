@@ -20,4 +20,7 @@
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
   </feature>
+  <!-- PLUGINS -->
+  <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />
+  <allow-navigation href="*" />    
 </widget>
